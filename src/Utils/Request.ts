@@ -2,12 +2,15 @@ import { ApolloClient, InMemoryCache, DocumentNode } from '@apollo/client'
 import { RestLink } from 'apollo-link-rest'
 import store from '../index'
 
-const Request = async (query: DocumentNode) => {
-  const baseUrl = process.env.REACT_APP_RIJKS_PATH
+const Request = async (query: DocumentNode, id?: string) => {
   const language = store?.getState()?.app?.appLanguage || 'en'
+  const baseUrl = `${process.env.REACT_APP_RIJKS_PATH}${language}/collection`
+  const key = `?key=${process.env.REACT_APP_RIJKS_KEY}`
+  const generalQuery = id?.length ? '' : `&ps=${process.env.REACT_APP_REQUEST_LIMIT}&imgonly=true`
+  const idRequest = id?.length ? `/${id}` : ''
 
   const restLink = new RestLink({
-    uri: `${baseUrl}${language}/collection?key=${process.env.REACT_APP_RIJKS_KEY}&ps=${process.env.REACT_APP_REQUEST_LIMIT}&imgonly=true`
+    uri: `${baseUrl}${idRequest}${key}${generalQuery}`
   })
 
   const client = new ApolloClient({

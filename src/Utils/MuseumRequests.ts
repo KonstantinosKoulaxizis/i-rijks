@@ -9,6 +9,9 @@ export const MuseumRequests = (() => {
       const response = await Request(QuerieUtils.getArtPieces())
 
       store.dispatch(setArtList(response?.data?.response?.artObjects || []))
+    },
+    getCollectionDetails: async (id: string) => {
+      return await Request(QuerieUtils.getDetailsPage(id))
     }
   }
 })()
