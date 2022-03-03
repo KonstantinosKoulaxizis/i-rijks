@@ -27,17 +27,13 @@ export const QuerieUtils = (() => {
         }
       `
     },
-    getDetailsPage: (id: string) => {
+    getDetailsPage: () => {
       return gql`
-      query GetDetailsPage_${id} {
+      query GetDetailsPage {
         response @rest(type: "ArtPieces", path: "") {
           artObject {
             colors
             materials
-            acquisition {
-              creditLine
-              date
-            }
             dating {
               presentingDate
             }

@@ -5,7 +5,7 @@ import TopBar from '../Components/TopBar'
 import Navigation from '../Components/Navigation'
 import Landing from '../Views/Landing'
 import ArtList from '../Views/ArtList'
-import ImageView from '../Views/ImageView'
+import CollectionView from '../Views/CollectionView'
 import NoMatch from '../Views/NoMatch'
 
 export default function AppRouter() {
@@ -15,7 +15,7 @@ export default function AppRouter() {
         <Route path='/' element={<Layout />}>
           <Route index element={<Landing />} />
           <Route path='list' element={<ArtList />} />
-          <Route path=':id' element={<ImageView />} />
+          <Route path=':id' element={<CollectionView />} />
           {/* <Route
             path="templates"
             element={<PrivateRoute component={Templates} />}

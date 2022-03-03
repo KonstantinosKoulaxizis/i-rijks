@@ -11,7 +11,7 @@ export const MuseumRequests = (() => {
       store.dispatch(setArtList(response?.data?.response?.artObjects || []))
     },
     getCollectionDetails: async (id: string) => {
-      return await Request(QuerieUtils.getDetailsPage(id))
+      return await Request(QuerieUtils.getDetailsPage(), id)
     }
   }
 })()
