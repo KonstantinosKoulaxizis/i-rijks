@@ -34,12 +34,17 @@ export const QuerieUtils = (() => {
           artObject {
             colors
             materials
+            principalMaker
             dating {
               presentingDate
             }
             label {
               description
               makerLine
+              title
+            }
+            webImage {
+              url
             }
           }
         }

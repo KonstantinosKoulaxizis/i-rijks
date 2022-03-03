@@ -1,8 +1,10 @@
 interface CollectionDetailsModel {
-    colors: string[]
-    materials: string[]
-    label: { description: string, makerLine: string }
-    dating: {presentingDate:string}
-  }
-  
-  export default CollectionDetailsModel
+  colors: string[]
+  materials: string[]
+  label: { description: string; makerLine: string; title: string }
+  webImage: { url: string }
+  dating: { presentingDate: string }
+  principalMaker: string
+}
+
+export default CollectionDetailsModel
