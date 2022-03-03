@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const ArtTile: FunctionComponent<{
+const CollectionTile: FunctionComponent<{
   objectNumber: string
   title: string
   principalOrFirstMaker: string
@@ -21,4 +21,4 @@ const ArtTile: FunctionComponent<{
   )
 }
 
-export default ArtTile
+export default CollectionTile

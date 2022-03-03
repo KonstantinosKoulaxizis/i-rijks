@@ -11,7 +11,7 @@ import './SearchField.scss'
 const SearchField = () => {
   const dispatch = useReduxDispatch()
   const setSearchValue = useCallback(value => dispatch(SetSearchValue(value)), [dispatch])
-  const searchValue: string = useReduxSelector(state => state.artList.searchValue)
+  const searchValue: string = useReduxSelector(state => state.collectionList.searchValue)
   const debouncedStoreData = useDebounce(searchValue, 800)
 
   const onHandleSearchValue = (e: React.FormEvent<HTMLInputElement>) => {

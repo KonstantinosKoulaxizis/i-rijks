@@ -4,13 +4,13 @@ import { MuseumRequests } from '../../Utils/MuseumRequests'
 import { useReduxSelector } from '../../Hooks/ReduxHooks'
 
 import SearchField from '../../Components/SearchField'
-import ArtTile from '../../Components/ArtTile'
+import CollectionTile from '../../Components/CollectionTile'
 import ArtTileModel from '../../Models/ArtTileModel'
 
-import './ArtList.scss'
+import './CollectionList.scss'
 
-const ArtList = () => {
-  const artList: ArtTileModel[] = useReduxSelector(state => state.artList.list)
+const CollectionList = () => {
+  const collectionList: ArtTileModel[] = useReduxSelector(state => state.collectionList.list)
 
   const handleCollectionList = async () => {
     await MuseumRequests.getMuseumCollection()
@@ -24,8 +24,8 @@ const ArtList = () => {
     <div>
       <SearchField />
       <div id='photos'>
-        {artList.map(item => (
-          <ArtTile
+        {collectionList.map(item => (
+          <CollectionTile
             key={item.objectNumber}
             objectNumber={item.objectNumber}
             title={item.title}
@@ -39,4 +39,4 @@ const ArtList = () => {
   )
 }
 
-export default ArtList
+export default CollectionList

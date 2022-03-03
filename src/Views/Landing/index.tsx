@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import './ArtList.scss'
+import './Landing.scss'
 
 const Landing = () => {
   const navigate = useNavigate()

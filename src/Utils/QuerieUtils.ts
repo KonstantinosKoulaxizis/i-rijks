@@ -5,7 +5,7 @@ export const QuerieUtils = (() => {
   return {
     getArtPieces: () => {
       let result = ''
-      const searchValue = store?.getState()?.artList?.searchValue
+      const searchValue = store?.getState()?.collectionList?.searchValue
       //add search value to query
       if (searchValue) {
         result = result + `&q=${searchValue.replace(/\s/g, '+')}`

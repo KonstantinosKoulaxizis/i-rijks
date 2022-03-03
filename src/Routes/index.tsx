@@ -4,7 +4,7 @@ import { Routes, Route, Outlet } from 'react-router-dom'
 import TopBar from '../Components/TopBar'
 import Navigation from '../Components/Navigation'
 import Landing from '../Views/Landing'
-import ArtList from '../Views/ArtList'
+import CollectionList from '../Views/CollectionList'
 import CollectionView from '../Views/CollectionView'
 import NoMatch from '../Views/NoMatch'
 
@@ -14,7 +14,7 @@ export default function AppRouter() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Landing />} />
-          <Route path='list' element={<ArtList />} />
+          <Route path='list' element={<CollectionList />} />
           <Route path=':id' element={<CollectionView />} />
           {/* <Route
             path="templates"

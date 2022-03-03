@@ -4,7 +4,7 @@ import artListReducer from './Reducers/ArtListReducers'
 
 const rootReducer = combineReducers({
   app: appReducer,
-  artList: artListReducer
+  collectionList: artListReducer
 })
 
 const configureStore = () => createStore(rootReducer)

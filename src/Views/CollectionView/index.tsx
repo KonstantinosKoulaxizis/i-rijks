@@ -27,7 +27,9 @@ const CollectionView = () => {
   return (
     <div>
       <button onClick={handleGoBack}>Go back </button>
-      <div></div>
+      <div>
+        
+      </div>
     </div>
   )
 }
