@@ -1,0 +1,31 @@
+#top-bar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    color: #fff;
+    padding: 5px;
+    z-index: 100;
+    
+    #logo {
+      margin-left: 10px;
+    }
+  
+    #top-bar-actions {
+      display: flex;
+      width: 150px;
+      justify-content: space-evenly;
+    }
+  }
+  
+  .top-bar-hr {
+    margin-top: 50px;
+    border-color: red;
+  }
+  
