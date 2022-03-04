@@ -1,19 +1,14 @@
 import { gql } from '@apollo/client'
-import store from '../index'
+import AppUtils from './AppUtils'
 
 export const QuerieUtils = (() => {
   return {
     getArtPieces: () => {
-      let result = ''
-      const searchValue = store?.getState()?.searchOptions?.searchValue
-      //add search value to query
-      if (searchValue) {
-        result = result + `&q=${searchValue.replace(/\s/g, '+')}`
-      }
+      const query = AppUtils.createSearchQuery()
 
       return gql`
         query GetArtPieces {
-          response @rest(type: "ArtPieces", path: "${result}") {
+          response @rest(type: "ArtPieces", path: "${query}") {
             artObjects {
               objectNumber
               title

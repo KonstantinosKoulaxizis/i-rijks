@@ -9,7 +9,7 @@ import './App.scss'
 
 const App = () => {
   const handleCheckLanguage = () => {
-    const storedLanguage = AppUtils.getStoredValue(LANGUAGE)
+    const storedLanguage = AppUtils.getStoredValue(LANGUAGE) || 'en'
     console.log('refactor to update redux')
 
     if (storedLanguage?.length) {
