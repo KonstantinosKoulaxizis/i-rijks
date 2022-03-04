@@ -1,7 +1,9 @@
 import { useCallback } from 'react'
 import { useReduxDispatch, useReduxSelector } from '../../Hooks/ReduxHooks'
 import i18next from 'i18next'
+import { FaRegLightbulb, FaLightbulb } from 'react-icons/fa'
 
+import ToggleIconButton from '../ToggleIconButton'
 import { setAppLanguage, setAppDarkMode } from '../../store/Actions/AppActions'
 import { LANGUAGE, DARK_MODE } from '../../Consts/AppConsts'
 import AppUtils from '../../Utils/AppUtils'
@@ -33,7 +35,12 @@ const TopBar = () => {
       <div id='logo'>i - Rijks</div>
 
       <div id='top-bar-actions'>
-        <button onClick={handleChangeDarkMode}>{'login'}</button>
+        <ToggleIconButton
+          listeningState={isDarkMode}
+          changeState={handleChangeDarkMode}
+          activeIcon={<FaRegLightbulb />}
+          inactiveIcon={<FaLightbulb />}
+        />
         <select value={language || 'en'} onChange={handleChangeLanguage}>
           <option value='en'>EN</option>
           <option value='nl'>NL</option>
