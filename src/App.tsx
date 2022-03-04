@@ -2,13 +2,14 @@ import { useEffect } from 'react'
 import AppRouter from './Routes'
 import i18next from 'i18next'
 
-import LocalStorageUtils from './Utils/LocalStorageUtils'
+import AppUtils from './Utils/AppUtils'
+import { LANGUAGE } from './Consts/AppConsts'
 
 import './App.scss'
 
 const App = () => {
   const handleCheckLanguage = () => {
-    const storedLanguage = LocalStorageUtils.getStoredLanguage()
+    const storedLanguage = AppUtils.getStoredValue(LANGUAGE)
     console.log('refactor to update redux')
 
     if (storedLanguage?.length) {

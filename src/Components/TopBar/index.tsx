@@ -3,7 +3,8 @@ import { useReduxDispatch, useReduxSelector } from '../../Hooks/ReduxHooks'
 import i18next from 'i18next'
 
 import { setAppLanguage, setAppDarkMode } from '../../store/Actions/AppActions'
-import LocalStorageUtils from '../../Utils/LocalStorageUtils'
+import { LANGUAGE, DARK_MODE } from '../../Consts/AppConsts'
+import AppUtils from '../../Utils/AppUtils'
 
 import './TopBar.scss'
 
@@ -15,14 +16,14 @@ const TopBar = () => {
   const setDarkMode = useCallback(mode => dispatch(setAppDarkMode(mode)), [dispatch])
 
   const handleChangeDarkMode = () => {
-    LocalStorageUtils.storeIsDarkMode(!isDarkMode)
+    AppUtils.setValueLocalStorage(DARK_MODE, JSON.stringify(!isDarkMode))
     setDarkMode(!isDarkMode)
   }
 
   const handleChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (!event?.target?.value) return
 
-    LocalStorageUtils.storeSelectedLanguage(event.target.value)
+    AppUtils.setValueLocalStorage(LANGUAGE, event.target.value)
     setLanguage(event.target.value)
     i18next.changeLanguage(event.target.value)
   }
