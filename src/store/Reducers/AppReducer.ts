@@ -1,8 +1,9 @@
-import { APP_LANGUAGE, DARK_MODE } from '../Actions/ActionTypes'
+import { APP_LANGUAGE, DARK_MODE, LIST_MODE } from '../Actions/ActionTypes'
 
 const initialState = {
   appLanguage: '',
-  darkMode: false
+  darkMode: false,
+  listMode: false
 }
 
 const appReducer = (state = initialState, action: any) => {
@@ -16,6 +17,11 @@ const appReducer = (state = initialState, action: any) => {
       return {
         ...state,
         darkMode: action.payload
+      }
+    case LIST_MODE:
+      return {
+        ...state,
+        listMode: action.payload
       }
     default:
       return state

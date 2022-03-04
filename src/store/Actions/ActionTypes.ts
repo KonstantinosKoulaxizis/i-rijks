@@ -1,6 +1,7 @@
 // App
 export const APP_LANGUAGE = 'APP_LANGUAGE'
 export const DARK_MODE = 'DARK_MODE'
+export const LIST_MODE = 'LIST_MODE'
 
 //List
 export const ART_LIST = 'ART_LIST'

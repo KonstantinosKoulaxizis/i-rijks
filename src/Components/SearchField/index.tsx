@@ -14,7 +14,9 @@ const SearchField = () => {
 
   return (
     <div id='search-field-container'>
-      <FaSearch />
+      <button id="disabled-search-button">
+        <FaSearch />
+      </button>
       <InputComponent
         searchValue={searchValue}
         setSearchValue={setSearch}
@@ -22,6 +24,7 @@ const SearchField = () => {
         min={undefined}
         max={undefined}
       />
+      <button id="list-state-button">test</button>
     </div>
   )
 }
