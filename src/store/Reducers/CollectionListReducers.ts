@@ -5,7 +5,7 @@ const initialState = {
   searchValue: ''
 }
 
-const artListReducer = (state = initialState, action: any) => {
+const collectionListReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case ART_LIST:
       return {
@@ -22,4 +22,4 @@ const artListReducer = (state = initialState, action: any) => {
   }
 }
 
-export default artListReducer
+export default collectionListReducer

@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #282c34;
+    background-color: #282c34f0;
     color: #fff;
     padding: 5px;
     z-index: 100;
@@ -24,8 +24,4 @@
     }
   }
   
-  .top-bar-hr {
-    margin-top: 50px;
-    border-color: red;
-  }
   

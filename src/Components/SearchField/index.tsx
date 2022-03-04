@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { FaSearch } from 'react-icons/fa'
 
 import { useReduxDispatch, useReduxSelector } from '../../Hooks/ReduxHooks'
-import { SetSearchValue } from '../../store/Actions/ArtListActions'
+import { SetSearchValue } from '../../store/Actions/SearchActions'
 import InputComponent from '../InputComponent'
 
 import './SearchField.scss'
