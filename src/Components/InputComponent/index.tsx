@@ -5,7 +5,7 @@ import InputFieldModel from '../../Models/InputFieldModel'
 import useDebounce from '../../Hooks/useDebounce'
 import { MuseumRequests } from '../../Utils/MuseumRequests'
 
-// import './InputComponent.scss'
+import './InputComponent.scss'
 
 const InputComponent: FunctionComponent<InputFieldModel> = ({ searchValue, setSearchValue }) => {
   const debouncedStoreData = useDebounce(searchValue, 800)
@@ -24,7 +24,7 @@ const InputComponent: FunctionComponent<InputFieldModel> = ({ searchValue, setSe
   }, [debouncedStoreData])
 
   return (
-    <div id='input-component'>
+    <div className='input-component'>
       <input type='text' value={searchValue} onChange={onHandleSearchValue} />
     </div>
   )

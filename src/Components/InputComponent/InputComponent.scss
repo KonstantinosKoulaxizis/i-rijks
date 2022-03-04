@@ -1,0 +1,15 @@
+.input-component {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  input {
+    padding: 10px;
+    outline: none;
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  input:focus {
+    border: 2px solid dodgerblue;
+  }
+}
