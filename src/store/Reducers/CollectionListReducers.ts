@@ -1,8 +1,7 @@
-import { ART_LIST, SEARCH_VALUE } from '../Actions/ActionTypes'
+import { ART_LIST } from '../Actions/ActionTypes'
 
 const initialState = {
-  list: [],
-  searchValue: ''
+  list: []
 }
 
 const collectionListReducer = (state = initialState, action: any) => {
@@ -12,11 +11,7 @@ const collectionListReducer = (state = initialState, action: any) => {
         ...state,
         list: action.payload
       }
-    case SEARCH_VALUE:
-      return {
-        ...state,
-        searchValue: action.payload
-      }
+
     default:
       return state
   }

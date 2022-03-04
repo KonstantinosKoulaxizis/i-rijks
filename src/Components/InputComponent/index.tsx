@@ -7,7 +7,7 @@ import { MuseumRequests } from '../../Utils/MuseumRequests'
 
 import './InputComponent.scss'
 
-const InputComponent: FunctionComponent<InputFieldModel> = ({ searchValue, setSearchValue }) => {
+const InputComponent: FunctionComponent<InputFieldModel> = ({ searchValue, setSearchValue, type }) => {
   const debouncedStoreData = useDebounce(searchValue, 800)
 
   const onHandleSearchValue = (e: React.FormEvent<HTMLInputElement>) => {
@@ -21,7 +21,7 @@ const InputComponent: FunctionComponent<InputFieldModel> = ({ searchValue, setSe
 
   return (
     <div className='input-component'>
-      <input type='text' value={searchValue} onChange={onHandleSearchValue} />
+      <input type={type} value={searchValue} onChange={onHandleSearchValue} />
     </div>
   )
 }

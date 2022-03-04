@@ -5,7 +5,7 @@ export const QuerieUtils = (() => {
   return {
     getArtPieces: () => {
       let result = ''
-      const searchValue = store?.getState()?.collectionList?.searchValue
+      const searchValue = store?.getState()?.searchOptions?.searchValue
       //add search value to query
       if (searchValue) {
         result = result + `&q=${searchValue.replace(/\s/g, '+')}`
@@ -29,27 +29,27 @@ export const QuerieUtils = (() => {
     },
     getDetailsPage: () => {
       return gql`
-      query GetDetailsPage {
-        response @rest(type: "ArtPieces", path: "") {
-          artObject {
-            colors
-            materials
-            principalMaker
-            dating {
-              presentingDate
-            }
-            label {
-              description
-              makerLine
-              title
-            }
-            webImage {
-              url
+        query GetDetailsPage {
+          response @rest(type: "ArtPieces", path: "") {
+            artObject {
+              colors
+              materials
+              principalMaker
+              dating {
+                presentingDate
+              }
+              label {
+                description
+                makerLine
+                title
+              }
+              webImage {
+                url
+              }
             }
           }
         }
-      }
-    `
+      `
     }
   }
 })()

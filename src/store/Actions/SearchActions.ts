@@ -6,7 +6,7 @@ import {
   DATING_PERIOD
 } from './ActionTypes'
 
-export const SetSearchValue = (searchValue: string) => ({
+export const setSearchValue = (searchValue: string) => ({
   type: SEARCH_VALUE,
   payload: searchValue
 })
