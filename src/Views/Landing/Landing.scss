@@ -1,32 +1,32 @@
-#photos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 10px;
+// #photos {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: space-evenly;
+//   gap: 10px;
 
-  .art-tile {
-    background-color: #c7c5cd;
-    border-radius: 8px;
-    max-width: 300px;
-    padding-bottom: 10px;
+//   .art-tile {
+//     background-color: #c7c5cd;
+//     border-radius: 8px;
+//     max-width: 300px;
+//     padding-bottom: 10px;
     
-    .art-tile-creator {
-      font-size: 18px;
-      align-self: center;
-    }
+//     .art-tile-creator {
+//       font-size: 18px;
+//       align-self: center;
+//     }
     
-    .art-tile-header {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    img {
-      object-fit: cover;
-      max-width: 300px;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-      height: 200px;
-    }
-  }
-}
+//     .art-tile-header {
+//       font-size: 20px;
+//       font-weight: bold;
+//       margin-bottom: 10px;
+//     }
+//     img {
+//       object-fit: cover;
+//       max-width: 300px;
+//       border-top-left-radius: 6px;
+//       border-top-right-radius: 6px;
+//       height: 200px;
+//     }
+//   }
+// }

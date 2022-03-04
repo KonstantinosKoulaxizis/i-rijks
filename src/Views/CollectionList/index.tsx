@@ -11,6 +11,7 @@ import './CollectionList.scss'
 
 const CollectionList = () => {
   const collectionList: ArtTileModel[] = useReduxSelector(state => state.collectionList.list)
+  const listModeActive = useReduxSelector(state => state.app.listMode)
 
   const handleCollectionList = async () => {
     await MuseumRequests.getMuseumCollection()
@@ -23,7 +24,7 @@ const CollectionList = () => {
   return (
     <div>
       <SearchField />
-      <div id='photos'>
+      <div id={listModeActive ? 'collection-list' : 'collection-tiles'}>
         {collectionList.map(item => (
           <CollectionTile
             key={item.objectNumber}

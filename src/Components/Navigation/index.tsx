@@ -7,7 +7,6 @@ import './Navigation.scss'
 
 const Navigation: FunctionComponent = ({ children }) => {
   const location = useLocation()
-  console.log('🚀 ~ file: index.tsx ~ line 10 ~ location', location?.pathname)
 
   return (
     <div id='navigation-wrapper'>

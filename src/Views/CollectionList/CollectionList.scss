@@ -1,4 +1,4 @@
-#photos {
+#collection-tiles {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -10,12 +10,12 @@
     border-radius: 8px;
     max-width: 300px;
     padding-bottom: 10px;
-    
+
     .art-tile-creator {
       font-size: 18px;
       align-self: center;
     }
-    
+
     .art-tile-header {
       font-size: 20px;
       font-weight: bold;
@@ -27,6 +27,35 @@
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
       height: 200px;
+    }
+  }
+}
+
+#collection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .art-tile {
+    background-color: #c7c5cd;
+    border-radius: 8px;
+    padding-bottom: 10px;
+
+    .art-tile-creator {
+      font-size: 22px;
+      align-self: center;
+    }
+
+    .art-tile-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    img {
+      object-fit: cover;
+      max-width: 100%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
     }
   }
 }
