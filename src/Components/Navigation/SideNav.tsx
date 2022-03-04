@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import { useReduxDispatch, useReduxSelector } from '../../Hooks/ReduxHooks'
 import {
@@ -15,6 +15,7 @@ import './Navigation.scss'
 
 const SideNav = () => {
   const location = useLocation()
+  const navigate = useNavigate()
   const dispatch = useReduxDispatch()
   const setMaker = useCallback(value => dispatch(setInvolvedMaker(value)), [dispatch])
   const setMaterial = useCallback(value => dispatch(setMaterialUsed(value)), [dispatch])
@@ -40,11 +41,19 @@ const SideNav = () => {
     }
   ]
 
+  const navigationButtons = [
+    { label: 'list', path: '/list' },
+    { label: 'favorites', path: '/favorites' }
+  ]
+
   return (
     <div id='side-navigation'>
       <hr />
-      <button>download</button>
-      <button>preview</button>
+      {navigationButtons.map((btn: { label: string; path: string }) => (
+        <button key={btn.path} onClick={() => navigate(`../${btn.path}`)}>
+          {btn.label}
+        </button>
+      ))}
       <div className={location?.pathname === '/list' ? 'visible_class' : 'hidden_class'}>
         <h4>Advanced search</h4>
         <div id='advanced-search-wrapper'>

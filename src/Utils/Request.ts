@@ -1,9 +1,11 @@
 import { ApolloClient, InMemoryCache, DocumentNode } from '@apollo/client'
 import { RestLink } from 'apollo-link-rest'
-import store from '../index'
+
+import AppUtils from './AppUtils'
+import { LANGUAGE } from '../Consts/AppConsts'
 
 const Request = async (query: DocumentNode, id?: string) => {
-  const language = store?.getState()?.app?.appLanguage || 'en'
+  const language = AppUtils.getStoredValue(LANGUAGE) || 'en'
   const baseUrl = `${process.env.REACT_APP_RIJKS_PATH}${language}/collection`
   const key = `?key=${process.env.REACT_APP_RIJKS_KEY}`
   const generalQuery = id?.length ? '' : `&ps=${process.env.REACT_APP_REQUEST_LIMIT}&imgonly=true`

@@ -1,7 +1,6 @@
 .app {
   text-align: center;
   font-size: calc(10px + 2vmin);
-  background-color: #34383f;
 }
 
 .visible_class {
@@ -10,4 +9,9 @@
 
 .hidden_class {
   opacity: 0;
+}
+
+.card-background {
+  background-color: #c7c5cd;
+  border-radius: 8px;
 }

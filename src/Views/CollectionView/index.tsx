@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { MuseumRequests } from '../../Utils/MuseumRequests'
 // import CollectionDetailsModel from '../../Models/CollectionDetailsModel'
 
@@ -7,17 +7,8 @@ import './CollectionView.scss'
 
 const CollectionView = () => {
   const { id } = useParams()
-  const navigate = useNavigate()
   const [loadedCollection, setLoadedCollection] = useState<any>({})
-  console.log(
-    '🚀 ~ file: index.tsx ~ line 12 ~ CollectionView ~ loadedCollection',
-    loadedCollection
-  )
   const [isLoaded, setLoaded] = useState(false)
-
-  const handleGoBack = () => {
-    navigate('../list')
-  }
 
   const handleGetCollection = useCallback(async () => {
     if (id) {
@@ -38,10 +29,9 @@ const CollectionView = () => {
   }, [handleGetCollection])
   return (
     <div id='collection-view'>
-      <button onClick={handleGoBack}>Go back </button>
       {isLoaded && (
         <div id='collection-wrapper'>
-          <div id='collection-details'>
+          <div id='collection-details' className='card-background'>
             <h4>{loadedCollection.label.title}</h4>
             <img
               src={loadedCollection.webImage.url}
@@ -52,11 +42,30 @@ const CollectionView = () => {
             <h6>{loadedCollection.label.description}</h6>
           </div>
 
-          <div id='collection-info'>
-            <h4>1</h4>
-            <h4>1</h4>
-            <h4>1</h4>
-            <h4>1</h4>
+          <div id='collection-info' className='card-background'>
+            <div id='year-info'>
+              <h4>year</h4>
+              <h5>{loadedCollection?.dating?.presentingDate}</h5>
+            </div>
+
+            <hr />
+            <div>
+              <h4>used_colors</h4>
+              {loadedCollection?.colors.map((color: { hex: string; percentage: string }) => (
+                <div key={color.hex} className='color-info'>
+                  <div className='round-dot' style={{ backgroundColor: `${color.hex}` }} />
+                  <span>{color.percentage}%</span>
+                </div>
+              ))}
+            </div>
+            <hr />
+            <div id='materials-ifo'>
+              <h4>used_materials</h4>
+              {loadedCollection?.materials.map((material: string) => (
+                <h5 key={material}>{material}</h5>
+              ))}
+            </div>
+            <hr />
           </div>
         </div>
       )}

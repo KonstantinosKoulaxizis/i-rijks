@@ -17,7 +17,7 @@ const CollectionTile: FunctionComponent<CollectionTileModel> = ({
     navigate(`../${objectNumber}`)
   }
   return (
-    <div className='art-tile' onClick={handleNavigateToImage}>
+    <div className='art-tile card-background' onClick={handleNavigateToImage}>
       <img src={imageUrl} alt={title} loading='lazy' />
       <div className='art-tile-header'>{listModeActive ? longTitle : title}</div>
       <div className='art-tile-creator'>{principalOrFirstMaker}</div>
