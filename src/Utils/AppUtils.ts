@@ -30,7 +30,7 @@ const AppUtils = (() => {
         result = result + `&f.dating.period=${datingPeriod}`
       }
       if (colorUsed?.length) {
-        result = result + `&f.normalized32Colors.hex=${colorUsed}`
+        result = result + `&f.normalized32Colors.hex=${colorUsed.replace('#', '')}`
       }
 
       return result

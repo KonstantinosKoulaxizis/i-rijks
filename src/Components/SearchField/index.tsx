@@ -15,7 +15,13 @@ const SearchField = () => {
   return (
     <div id='search-field-container'>
       <FaSearch />
-      <InputComponent searchValue={searchValue} setSearchValue={setSearch} type={'text'} />
+      <InputComponent
+        searchValue={searchValue}
+        setSearchValue={setSearch}
+        type={'text'}
+        min={undefined}
+        max={undefined}
+      />
     </div>
   )
 }

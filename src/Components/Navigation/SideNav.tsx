@@ -28,7 +28,14 @@ const SideNav = () => {
     { label: 'involved_maker', value: involvedMakerValue, action: setMaker, type: 'text' },
     { label: 'material_used', value: MaterialUsedValue, action: setMaterial, type: 'text' },
     { label: 'color_used', value: colorUsedValue, action: setColor, type: 'color' },
-    { label: 'dating_period', value: datingPeriodValue, action: setPeriod, type: 'number' }
+    {
+      label: 'dating_period',
+      value: datingPeriodValue,
+      action: setPeriod,
+      type: 'number',
+      min: '0',
+      max: '21'
+    }
   ]
 
   return (
@@ -45,6 +52,8 @@ const SideNav = () => {
               searchValue={field.value}
               setSearchValue={field.action}
               type={field.type}
+              min={field?.min || undefined}
+              max={field?.max || undefined}
             />
           </div>
         ))}
