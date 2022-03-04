@@ -23,13 +23,22 @@
 
       button {
         padding: 20px 5px;
-        border-radius: 18px;
+        border-radius: 12px;
         margin: 0 15px;
+        border: 0;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      button:hover {
+        // background: linear-gradient(-45deg, rgba(59, 85, 41, 0.2), rgba(69, 248, 84, 0.5));
+        box-shadow: 4px 4px 4px 0 rgba(59, 121, 165, 0.2), -2px -2px 2px 0 rgba(135, 197, 242, 0.5);
       }
 
-      .acive-section {
-        background-color: green;
-        color: #fff;
+      .active-link {
+        text-shadow: 2px 2px 4px #1b95f2;
+        box-shadow: inset 2px 2px 2px 0 rgba(59, 121, 165, 0.2),
+          inset -2px -2px 2px 0 rgba(135, 197, 242, 0.5);
+        color: #318ed5;
       }
     }
 

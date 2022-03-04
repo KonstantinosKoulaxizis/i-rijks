@@ -8,8 +8,8 @@ import {
   setColorUsed,
   setDatingPeriod
 } from '../../store/Actions/SearchActions'
-
 import InputComponent from '../InputComponent'
+import NavigationButtonInterface from '../../Models/NavigationButtonInterface'
 
 import './Navigation.scss'
 
@@ -47,18 +47,24 @@ const SideNav = () => {
   ]
 
   return (
-    <div id='side-navigation'>
+    <div id="side-navigation">
       <hr />
-      {navigationButtons.map((btn: { label: string; path: string }) => (
-        <button key={btn.path} onClick={() => navigate(`../${btn.path}`)}>
+      {navigationButtons.map((btn: NavigationButtonInterface) => (
+        <button
+          className={`shadows${location?.pathname === btn.path ? ' active-link' : ''}`}
+          key={btn.path}
+          onClick={() => navigate(`../${btn.path}`)}>
           {btn.label}
         </button>
       ))}
-      <div className={location?.pathname === '/list' ? 'visible_class' : 'hidden_class'}>
+      <div
+        className={`shadows-light ${
+          location?.pathname === '/list' ? 'visible_class' : 'hidden_class'
+        }`}>
         <h4>Advanced search</h4>
-        <div id='advanced-search-wrapper'>
+        <div id="advanced-search-wrapper">
           {advancedSearchFields.map(field => (
-            <div key={field.label} className='advanced-search-fields'>
+            <div key={field.label} className="advanced-search-fields">
               <label>{field.label}</label>
               <InputComponent
                 searchValue={field.value}

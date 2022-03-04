@@ -29,7 +29,7 @@ const CollectionView = () => {
     <div id="collection-view">
       {isLoaded && (
         <div id="collection-wrapper">
-          <div id="collection-details" className="card-background">
+          <div id="collection-details" className="card-background shadows-light">
             <AddToFavorites
               objectNumber={id!}
               title={loadedCollection!.label.title}
@@ -47,7 +47,7 @@ const CollectionView = () => {
             <h6>{loadedCollection!.label.description}</h6>
           </div>
 
-          <div id="collection-info" className="card-background">
+          <div id="collection-info" className="card-background shadows-light">
             <div id="year-info">
               <h4>year</h4>
               <h5>{loadedCollection!.dating.presentingDate}</h5>

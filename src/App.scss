@@ -15,3 +15,13 @@
   background-color: #c7c5cd;
   border-radius: 8px;
 }
+
+.shadows {
+  background: linear-gradient(-45deg, rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.25));
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25), -2px -2px 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.shadows-light {
+  background: linear-gradient(-45deg, rgba(66, 65, 65, 0.22), rgba(255, 255, 255, 0.25));
+  box-shadow: 2px 2px 2px 0 rgba(61, 60, 60, 0.25), -2px -2px 2px 0 rgba(255, 255, 255, 0.3);
+}

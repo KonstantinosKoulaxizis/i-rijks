@@ -24,7 +24,7 @@ const SearchField = () => {
   }
 
   return (
-    <div id='search-field-container'>
+    <div id='search-field-container' className="shadows">
       <button id='disabled-search-button'>
         <FaSearch />
       </button>

@@ -18,7 +18,7 @@ const CollectionTile: FunctionComponent<CollectionTileModel> = ({
     navigate(`../list/${objectNumber}`)
   }
   return (
-    <div className="cart-tile card-background" onClick={handleNavigateToImage}>
+    <div className="cart-tile card-background shadows-light" onClick={handleNavigateToImage}>
       <AddToFavorites
         objectNumber={objectNumber}
         title={title}

@@ -5,8 +5,6 @@ import { useReduxSelector } from '../../Hooks/ReduxHooks'
 import ColectionTileModel from '../../Models/ColectionTileModel'
 import ListView from '../../Components/ListView'
 
-import './CollectionList.scss'
-
 const CollectionList = () => {
   const collectionList: ColectionTileModel[] = useReduxSelector(state => state.collectionList.list)
 
