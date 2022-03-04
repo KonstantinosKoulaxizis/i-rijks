@@ -26,30 +26,29 @@ const CollectionView = () => {
     handleGetCollection()
   }, [handleGetCollection])
   return (
-    <div id='collection-view'>
+    <div id="collection-view">
       {isLoaded && (
-        <div id='collection-wrapper'>
-          <div id='collection-details' className='card-background'>
+        <div id="collection-wrapper">
+          <div id="collection-details" className="card-background">
             <AddToFavorites
               objectNumber={id!}
               title={loadedCollection!.label.title}
               principalOrFirstMaker={loadedCollection!.principalMaker}
-              imageUrl={loadedCollection!.webImage.url}
+              headerImage={loadedCollection!.webImage}
               longTitle={loadedCollection!.label.makerLine}
-              readOnly={false}
             />
             <h4>{loadedCollection!.label.title}</h4>
             <img
               src={loadedCollection!.webImage.url}
               alt={loadedCollection!.label.title}
-              loading='lazy'
+              loading="lazy"
             />
             <h5>{loadedCollection!.label.makerLine}</h5>
             <h6>{loadedCollection!.label.description}</h6>
           </div>
 
-          <div id='collection-info' className='card-background'>
-            <div id='year-info'>
+          <div id="collection-info" className="card-background">
+            <div id="year-info">
               <h4>year</h4>
               <h5>{loadedCollection!.dating.presentingDate}</h5>
             </div>
@@ -58,14 +57,14 @@ const CollectionView = () => {
             <div>
               <h4>used_colors</h4>
               {loadedCollection!.colors.map((color, index) => (
-                <div key={index} className='color-info'>
-                  <div className='round-dot' style={{ backgroundColor: `${color.hex}` }} />
+                <div key={index} className="color-info">
+                  <div className="round-dot" style={{ backgroundColor: `${color.hex}` }} />
                   <span>{color.percentage}%</span>
                 </div>
               ))}
             </div>
             <hr />
-            <div id='materials-ifo'>
+            <div id="materials-ifo">
               <h4>used_materials</h4>
               {loadedCollection!.materials.map((material, index) => (
                 <h5 key={index}>{material}</h5>

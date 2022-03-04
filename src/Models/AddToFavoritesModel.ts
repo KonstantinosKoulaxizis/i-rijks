@@ -2,7 +2,7 @@ interface AddToFavoritesModel {
   objectNumber: string
   readOnly: boolean
   title: string
-  imageUrl: string
+  headerImage: { url: string }
   principalOrFirstMaker: string
   longTitle: string
 }
