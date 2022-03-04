@@ -90,7 +90,7 @@
 
 @media only screen and (max-width: 700px) {
   #side-bar {
-    opacity: 0;
+    left: -300px !important;
   }
   #navigation-footer {
     opacity: 1 !important;

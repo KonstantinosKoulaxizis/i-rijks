@@ -1,4 +1,13 @@
 .app {
   text-align: center;
   font-size: calc(10px + 2vmin);
+  background-color: #34383f;
+}
+
+.visible_class {
+  opacity: 1;
+}
+
+.hidden_class {
+  opacity: 0;
 }

@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import { useReduxDispatch, useReduxSelector } from '../../Hooks/ReduxHooks'
 import {
@@ -13,6 +14,7 @@ import InputComponent from '../InputComponent'
 import './Navigation.scss'
 
 const SideNav = () => {
+  const location = useLocation()
   const dispatch = useReduxDispatch()
   const setMaker = useCallback(value => dispatch(setInvolvedMaker(value)), [dispatch])
   const setMaterial = useCallback(value => dispatch(setMaterialUsed(value)), [dispatch])
@@ -43,20 +45,22 @@ const SideNav = () => {
       <hr />
       <button>download</button>
       <button>preview</button>
-      <h4>Advanced search</h4>
-      <div id='advanced-search-wrapper'>
-        {advancedSearchFields.map(field => (
-          <div key={field.label} className='advanced-search-fields'>
-            <label>{field.label}</label>
-            <InputComponent
-              searchValue={field.value}
-              setSearchValue={field.action}
-              type={field.type}
-              min={field?.min || undefined}
-              max={field?.max || undefined}
-            />
-          </div>
-        ))}
+      <div className={location?.pathname === '/list' ? 'visible_class' : 'hidden_class'}>
+        <h4>Advanced search</h4>
+        <div id='advanced-search-wrapper'>
+          {advancedSearchFields.map(field => (
+            <div key={field.label} className='advanced-search-fields'>
+              <label>{field.label}</label>
+              <InputComponent
+                searchValue={field.value}
+                setSearchValue={field.action}
+                type={field.type}
+                min={field?.min || undefined}
+                max={field?.max || undefined}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
