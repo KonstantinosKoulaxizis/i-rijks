@@ -6,6 +6,7 @@ import Navigation from '../Components/Navigation'
 import Landing from '../Views/Landing'
 import CollectionList from '../Views/CollectionList'
 import CollectionView from '../Views/CollectionView'
+import FavoritesList from '../Views/FavoritesList'
 import NoMatch from '../Views/NoMatch'
 
 export default function AppRouter() {
@@ -14,14 +15,9 @@ export default function AppRouter() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Landing />} />
+          <Route path='favorites' element={<FavoritesList />} />
           <Route path='list' element={<CollectionList />} />
           <Route path='list/:id' element={<CollectionView />} />
-          {/* <Route
-            path="templates"
-            element={<PrivateRoute component={Templates} />}
-          /> */}
-          {/* <Route path='new' element={<PrivateRoute component={NewSurvey} />} />
-          <Route path='SimpleTemplate' element={<SimpleTemplate />} /> */}
         </Route>
         <Route path='no_mach' element={<NoMatch />} />
         <Route path='*' element={<NoMatch />} />
