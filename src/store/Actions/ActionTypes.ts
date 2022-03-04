@@ -4,7 +4,8 @@ export const DARK_MODE = 'DARK_MODE'
 export const LIST_MODE = 'LIST_MODE'
 
 //List
-export const ART_LIST = 'ART_LIST'
+export const COLLECTION_LIST = 'COLLECTION_LIST'
+export const FAVORITES_LIST = 'FAVORITES_LIST'
 
 // Search actions
 export const SEARCH_VALUE = 'SEARCH_VALUE'

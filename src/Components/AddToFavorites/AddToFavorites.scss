@@ -1,10 +1,13 @@
 .favorites-button {
-    button {
-        background-color: transparent !important;
-        border: 0;
-        float: right;
-        padding: 5px 10px;
-        color: #7d7b81;
-        font-size: 25px;
-    }
+  .favorite-collection {
+    color: #b13b43 !important;
+  }
+  button {
+    background-color: transparent !important;
+    border: 0;
+    float: right;
+    padding: 5px 10px;
+    color: #7d7b81;
+    font-size: 25px;
+  }
 }

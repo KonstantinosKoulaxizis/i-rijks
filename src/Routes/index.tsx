@@ -15,7 +15,7 @@ export default function AppRouter() {
         <Route path='/' element={<Layout />}>
           <Route index element={<Landing />} />
           <Route path='list' element={<CollectionList />} />
-          <Route path=':id' element={<CollectionView />} />
+          <Route path='list/:id' element={<CollectionView />} />
           {/* <Route
             path="templates"
             element={<PrivateRoute component={Templates} />}

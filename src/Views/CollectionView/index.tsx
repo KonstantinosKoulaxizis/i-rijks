@@ -30,7 +30,14 @@ const CollectionView = () => {
       {isLoaded && (
         <div id='collection-wrapper'>
           <div id='collection-details' className='card-background'>
-            <AddToFavorites objectNumber={id!} readOnly={false} />
+            <AddToFavorites
+              objectNumber={id!}
+              title={loadedCollection!.label.title}
+              principalOrFirstMaker={loadedCollection!.principalMaker}
+              imageUrl={loadedCollection!.webImage.url}
+              longTitle={loadedCollection!.label.makerLine}
+              readOnly={false}
+            />
             <h4>{loadedCollection!.label.title}</h4>
             <img
               src={loadedCollection!.webImage.url}

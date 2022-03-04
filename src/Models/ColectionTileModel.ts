@@ -1,4 +1,4 @@
-interface ArtTileModel {
+interface ColectionTileModel {
   objectNumber: string
   headerImage: { url: string }
   principalOrFirstMaker: string
@@ -6,4 +6,4 @@ interface ArtTileModel {
   longTitle: string
 }
 
-export default ArtTileModel
+export default ColectionTileModel

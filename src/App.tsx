@@ -15,7 +15,7 @@ const App = () => {
   const appDarkMode = useCallback(value => dispatch(setAppDarkMode(value)), [dispatch])
   const appListMode = useCallback(value => dispatch(setListMode(value)), [dispatch])
 
-  const handleLoadStoredState = useCallback(() => {
+  const handleLoadStoredState = useCallback(async () => {
     const storedLanguage = AppUtils.getStoredValue(LANGUAGE) || 'en'
     const storedDarkMode = JSON.parse(AppUtils.getStoredValue(DARK_MODE) || 'false')
     const storedListMode = JSON.parse(AppUtils.getStoredValue(LIST_MODE) || 'false')
@@ -23,6 +23,8 @@ const App = () => {
     appLanhuage(storedLanguage)
     appDarkMode(storedDarkMode)
     appListMode(storedListMode)
+
+    await AppUtils.getSavedFavorites()
 
     if (storedLanguage?.length) {
       i18next.changeLanguage(storedLanguage)

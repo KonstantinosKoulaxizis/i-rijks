@@ -15,14 +15,21 @@ const CollectionTile: FunctionComponent<CollectionTileModel> = ({
   const listModeActive = useReduxSelector(state => state.app.listMode)
 
   const handleNavigateToImage = () => {
-    navigate(`/${objectNumber}`)
+    navigate(`../list/${objectNumber}`)
   }
   return (
-    <div className='art-tile card-background' onClick={handleNavigateToImage}>
-      <AddToFavorites objectNumber={objectNumber} readOnly={true} />
+    <div className='cart-tile card-background' onClick={handleNavigateToImage}>
+      <AddToFavorites
+        objectNumber={objectNumber}
+        title={title}
+        principalOrFirstMaker={principalOrFirstMaker}
+        imageUrl={imageUrl}
+        longTitle={longTitle}
+        readOnly={true}
+      />
       <img src={imageUrl} alt={title} loading='lazy' />
-      <div className='art-tile-header'>{listModeActive ? longTitle : title}</div>
-      <div className='art-tile-creator'>{principalOrFirstMaker}</div>
+      <div className='cart-tile-header'>{listModeActive ? longTitle : title}</div>
+      <div className='cart-tile-creator'>{principalOrFirstMaker}</div>
     </div>
   )
 }

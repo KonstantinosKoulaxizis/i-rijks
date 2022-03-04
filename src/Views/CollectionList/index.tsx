@@ -5,12 +5,12 @@ import { useReduxSelector } from '../../Hooks/ReduxHooks'
 
 import SearchField from '../../Components/SearchField'
 import CollectionTile from '../../Components/CollectionTile'
-import ArtTileModel from '../../Models/ArtTileModel'
+import ColectionTileModel from '../../Models/ColectionTileModel'
 
 import './CollectionList.scss'
 
 const CollectionList = () => {
-  const collectionList: ArtTileModel[] = useReduxSelector(state => state.collectionList.list)
+  const collectionList: ColectionTileModel[] = useReduxSelector(state => state.collectionList.list)
   const listModeActive = useReduxSelector(state => state.app.listMode)
 
   const handleCollectionList = async () => {
