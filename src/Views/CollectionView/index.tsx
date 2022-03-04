@@ -40,20 +40,24 @@ const CollectionView = () => {
     <div id='collection-view'>
       <button onClick={handleGoBack}>Go back </button>
       {isLoaded && (
-        <div id="collection-wrapper">
-          <div id="collection-details">
+        <div id='collection-wrapper'>
+          <div id='collection-details'>
             <h4>{loadedCollection.label.title}</h4>
-            <img src={loadedCollection.webImage.url} alt={loadedCollection.label.title} />
+            <img
+              src={loadedCollection.webImage.url}
+              alt={loadedCollection.label.title}
+              loading='lazy'
+            />
             <h5>{loadedCollection.label.makerLine}</h5>
             <h6>{loadedCollection.label.description}</h6>
           </div>
 
-          <div id="collection-info">
+          <div id='collection-info'>
             <h4>1</h4>
             <h4>1</h4>
             <h4>1</h4>
             <h4>1</h4>
-            </div>
+          </div>
         </div>
       )}
     </div>

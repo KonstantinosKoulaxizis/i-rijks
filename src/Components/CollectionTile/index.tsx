@@ -14,7 +14,7 @@ const CollectionTile: FunctionComponent<{
   }
   return (
     <div className='art-tile' onClick={handleNavigateToImage}>
-      <img src={imageUrl} alt={title} />
+      <img src={imageUrl} alt={title} loading='lazy'/>
       <div className='art-tile-header'>{title}</div>
       <div className='art-tile-creator'>{principalOrFirstMaker}</div>
     </div>
