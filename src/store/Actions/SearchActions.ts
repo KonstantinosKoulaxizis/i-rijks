@@ -2,7 +2,7 @@ import {
   SEARCH_VALUE,
   INVOLVED_MAKER,
   MATERIAL_USED,
-  COLOR_USED,
+  SHORT_BY,
   DATING_PERIOD
 } from './ActionTypes'
 
@@ -21,9 +21,9 @@ export const setMaterialUsed = (material: string) => ({
   payload: material
 })
 
-export const setColorUsed = (color: string) => ({
-  type: COLOR_USED,
-  payload: color
+export const setShortBy = (sortBy: string) => ({
+  type: SHORT_BY,
+  payload: sortBy
 })
 
 export const setDatingPeriod = (period: string) => ({

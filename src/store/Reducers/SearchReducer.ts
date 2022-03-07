@@ -1,10 +1,17 @@
-import { SEARCH_VALUE, INVOLVED_MAKER, MATERIAL_USED, DATING_PERIOD } from '../Actions/ActionTypes'
+import {
+  SEARCH_VALUE,
+  INVOLVED_MAKER,
+  MATERIAL_USED,
+  DATING_PERIOD,
+  SHORT_BY
+} from '../Actions/ActionTypes'
 
 const initialState = {
   searchValue: '',
   involvedMaker: '',
   materialUsed: '',
-  datingPeriod: ''
+  datingPeriod: '',
+  sortBy: ''
 }
 
 const SearchReducer = (state = initialState, action: any) => {
@@ -28,6 +35,11 @@ const SearchReducer = (state = initialState, action: any) => {
       return {
         ...state,
         datingPeriod: action.payload
+      }
+    case SHORT_BY:
+      return {
+        ...state,
+        sortBy: action.payload
       }
     default:
       return state

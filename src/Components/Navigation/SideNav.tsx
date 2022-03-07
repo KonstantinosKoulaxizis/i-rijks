@@ -5,7 +5,8 @@ import { useReduxDispatch, useReduxSelector } from '../../Hooks/ReduxHooks'
 import {
   setInvolvedMaker,
   setMaterialUsed,
-  setDatingPeriod
+  setDatingPeriod,
+  setShortBy
 } from '../../store/Actions/SearchActions'
 import InputComponent from '../InputComponent'
 import NavigationButtonInterface from '../../Models/NavigationButtonInterface'
@@ -19,10 +20,13 @@ const SideNav = () => {
   const setMaker = useCallback(value => dispatch(setInvolvedMaker(value)), [dispatch])
   const setMaterial = useCallback(value => dispatch(setMaterialUsed(value)), [dispatch])
   const setPeriod = useCallback(value => dispatch(setDatingPeriod(value)), [dispatch])
+  const sortBy = useCallback(value => dispatch(setShortBy(value)), [dispatch])
 
   const involvedMakerValue: string = useReduxSelector(state => state.searchOptions.involvedMaker)
   const MaterialUsedValue: string = useReduxSelector(state => state.searchOptions.materialUsed)
   const datingPeriodValue: string = useReduxSelector(state => state.searchOptions.datingPeriod)
+  const sortByValue: string = useReduxSelector(state => state.searchOptions.sortBy)
+  console.log("🚀 ~ file: SideNav.tsx ~ line 29 ~ SideNav ~ sortByValue", sortByValue)
 
   const advancedSearchFields = [
     { label: 'involved_maker', value: involvedMakerValue, action: setMaker, type: 'text' },
@@ -49,6 +53,12 @@ const SideNav = () => {
     { label: 'artist', value: 'artist' },
     { label: 'artistdesc', value: 'artistdesc' }
   ]
+
+  const handleChangeSortBy = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    if (!event?.target?.value) return
+    console.log("🚀 ~ file: SideNav.tsx ~ line 58 ~ handleChangeSortBy ~ event", event.target.value)
+    sortBy(event.target.value)
+  }
 
   return (
     <div id="side-navigation">
@@ -78,7 +88,7 @@ const SideNav = () => {
           ))}
           <div className="advanced-search-fields">
             <label>sort_results</label>
-            <select>
+            <select value={sortByValue || 'default'} onChange={handleChangeSortBy}>
               {sortOptions.map(opt => (
                 <option key={opt.value} value={opt.value}>
                   {opt.label}

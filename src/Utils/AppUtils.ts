@@ -51,19 +51,23 @@ const AppUtils = (() => {
       const involvedMaker = store?.getState()?.searchOptions?.involvedMaker
       const materialUsed = store?.getState()?.searchOptions?.materialUsed
       const datingPeriod = store?.getState()?.searchOptions?.datingPeriod
+      const shortByValue = store?.getState()?.searchOptions?.sortBy
 
       //add search value to query
-      if (searchValue?.length) {
+      if (!!searchValue?.length) {
         result = result + `&q=${searchValue.replace(/\s/g, '+')}`
       }
-      if (involvedMaker?.length) {
+      if (!!involvedMaker?.length) {
         result = result + `&involvedMaker=${involvedMaker.replace(/\s/g, '+')}`
       }
-      if (materialUsed?.length) {
+      if (!!materialUsed?.length) {
         result = result + `&material=${materialUsed.replace(/\s/g, '+')}`
       }
-      if (datingPeriod?.length) {
+      if (!!datingPeriod?.length) {
         result = result + `&f.dating.period=${datingPeriod}`
+      }
+      if (!!shortByValue?.length && shortByValue !== 'default') {
+        result = result + `&s=${shortByValue}`
       }
 
       return result
