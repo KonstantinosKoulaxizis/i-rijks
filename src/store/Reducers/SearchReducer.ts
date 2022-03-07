@@ -1,16 +1,9 @@
-import {
-  SEARCH_VALUE,
-  INVOLVED_MAKER,
-  MATERIAL_USED,
-  COLOR_USED,
-  DATING_PERIOD
-} from '../Actions/ActionTypes'
+import { SEARCH_VALUE, INVOLVED_MAKER, MATERIAL_USED, DATING_PERIOD } from '../Actions/ActionTypes'
 
 const initialState = {
   searchValue: '',
   involvedMaker: '',
   materialUsed: '',
-  colorUsed: '',
   datingPeriod: ''
 }
 
@@ -30,11 +23,6 @@ const SearchReducer = (state = initialState, action: any) => {
       return {
         ...state,
         materialUsed: action.payload
-      }
-    case COLOR_USED:
-      return {
-        ...state,
-        colorUsed: action.payload
       }
     case DATING_PERIOD:
       return {

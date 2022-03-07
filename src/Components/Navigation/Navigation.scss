@@ -58,17 +58,15 @@
 
     #advanced-search-wrapper {
       margin-top: -20px;
-      :nth-child(2) {
+      :nth-child(1) {
         label {
           margin-top: -12px;
         }
       }
-      :nth-child(3) {
-        input {
-          padding: 0;
-          margin-left: 10px;
-          margin-top: -6px;
-        }
+      select {
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
       }
     }
   }

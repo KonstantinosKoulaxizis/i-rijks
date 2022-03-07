@@ -51,7 +51,6 @@ const AppUtils = (() => {
       const involvedMaker = store?.getState()?.searchOptions?.involvedMaker
       const materialUsed = store?.getState()?.searchOptions?.materialUsed
       const datingPeriod = store?.getState()?.searchOptions?.datingPeriod
-      const colorUsed = store?.getState()?.searchOptions?.colorUsed
 
       //add search value to query
       if (searchValue?.length) {
@@ -65,9 +64,6 @@ const AppUtils = (() => {
       }
       if (datingPeriod?.length) {
         result = result + `&f.dating.period=${datingPeriod}`
-      }
-      if (colorUsed?.length) {
-        result = result + `&f.normalized32Colors.hex=${colorUsed.replace('#', '')}`
       }
 
       return result
