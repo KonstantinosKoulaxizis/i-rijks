@@ -10,6 +10,7 @@ import {
 } from '../../store/Actions/SearchActions'
 import InputComponent from '../InputComponent'
 import NavigationButtonInterface from '../../Models/NavigationButtonInterface'
+import { MuseumRequests } from '../../Utils/MuseumRequests'
 
 import './Navigation.scss'
 
@@ -26,7 +27,7 @@ const SideNav = () => {
   const MaterialUsedValue: string = useReduxSelector(state => state.searchOptions.materialUsed)
   const datingPeriodValue: string = useReduxSelector(state => state.searchOptions.datingPeriod)
   const sortByValue: string = useReduxSelector(state => state.searchOptions.sortBy)
-  console.log("🚀 ~ file: SideNav.tsx ~ line 29 ~ SideNav ~ sortByValue", sortByValue)
+  console.log('🚀 ~ file: SideNav.tsx ~ line 29 ~ SideNav ~ sortByValue', sortByValue)
 
   const advancedSearchFields = [
     { label: 'involved_maker', value: involvedMakerValue, action: setMaker, type: 'text' },
@@ -54,10 +55,10 @@ const SideNav = () => {
     { label: 'artistdesc', value: 'artistdesc' }
   ]
 
-  const handleChangeSortBy = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChangeSortBy = async (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (!event?.target?.value) return
-    console.log("🚀 ~ file: SideNav.tsx ~ line 58 ~ handleChangeSortBy ~ event", event.target.value)
     sortBy(event.target.value)
+    await MuseumRequests.getMuseumCollection()
   }
 
   return (
