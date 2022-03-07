@@ -3,6 +3,10 @@
   font-size: calc(10px + 2vmin);
 }
 
+button {
+  cursor: pointer;
+}
+
 .visible_class {
   opacity: 1;
 }

@@ -18,7 +18,7 @@ const CollectionTile: FunctionComponent<CollectionTileModel> = ({
     navigate(`../list/${objectNumber}`)
   }
   return (
-    <div className="cart-tile card-background shadows-light" onClick={handleNavigateToImage}>
+    <div className="cart-tile card-background shadows-light">
       <AddToFavorites
         objectNumber={objectNumber}
         title={title}
@@ -26,9 +26,11 @@ const CollectionTile: FunctionComponent<CollectionTileModel> = ({
         headerImage={{ url: imageUrl }}
         longTitle={longTitle}
       />
-      <img src={imageUrl} alt={title} loading="lazy" />
-      <div className="cart-tile-header">{listModeActive ? longTitle : title}</div>
-      <div className="cart-tile-creator">{principalOrFirstMaker}</div>
+      <span onClick={handleNavigateToImage}>
+        <img src={imageUrl} alt={title} loading="lazy" />
+        <div className="cart-tile-header">{listModeActive ? longTitle : title}</div>
+        <div className="cart-tile-creator">{principalOrFirstMaker}</div>
+      </span>
     </div>
   )
 }

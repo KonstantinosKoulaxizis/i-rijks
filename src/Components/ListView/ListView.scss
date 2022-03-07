@@ -12,12 +12,14 @@
     .cart-tile-creator {
       font-size: 18px;
       align-self: center;
+      cursor: pointer;
     }
 
     .cart-tile-header {
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 10px;
+      cursor: pointer;
     }
     img {
       object-fit: cover;
@@ -25,6 +27,7 @@
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
       height: 200px;
+      cursor: pointer;
     }
   }
 }

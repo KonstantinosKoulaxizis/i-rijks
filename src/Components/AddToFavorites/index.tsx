@@ -1,6 +1,5 @@
 import { FunctionComponent, useState } from 'react'
 import { FaHeart } from 'react-icons/fa'
-import { useParams } from 'react-router-dom'
 
 import AppUtils from '../../Utils/AppUtils'
 import { useReduxSelector } from '../../Hooks/ReduxHooks'
@@ -16,14 +15,11 @@ const AddToFavorites: FunctionComponent<ColectionTileModel> = ({
   headerImage,
   longTitle
 }) => {
-  const { id } = useParams()
   const favoritesList = useReduxSelector(state => state.collectionList.favoritesList)
   const [isFavorite, setIsFavorite] = useState(
     favoritesList.find((fav: ColectionTileModel) => fav.objectNumber === objectNumber) || false
   )
   const handleChangeStatus = async () => {
-    if (!id) return
-
     const favorite = {
       objectNumber: objectNumber,
       title: title,
