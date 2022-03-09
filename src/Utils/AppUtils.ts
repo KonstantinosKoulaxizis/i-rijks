@@ -52,6 +52,7 @@ const AppUtils = (() => {
       const materialUsed = store?.getState()?.searchOptions?.materialUsed
       const datingPeriod = store?.getState()?.searchOptions?.datingPeriod
       const shortByValue = store?.getState()?.searchOptions?.sortBy
+      const currentPageValue = store?.getState()?.collectionList?.listPage
 
       //add search value to query
       if (!!searchValue?.length) {
@@ -68,6 +69,9 @@ const AppUtils = (() => {
       }
       if (!!shortByValue?.length && shortByValue !== 'default') {
         result = result + `&s=${shortByValue}`
+      }
+      if (currentPageValue > 1) {
+        result = result + `&p=${currentPageValue}`
       }
 
       return result
