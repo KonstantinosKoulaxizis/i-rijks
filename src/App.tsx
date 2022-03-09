@@ -1,6 +1,5 @@
 import { useEffect, useCallback } from 'react'
 import AppRouter from './Routes'
-import i18next from 'i18next'
 
 import AppUtils from './Utils/AppUtils'
 import { LANGUAGE, LIST_MODE } from './Consts/AppConsts'
@@ -24,10 +23,8 @@ const App = () => {
     await AppUtils.getSavedFavorites()
 
     if (storedLanguage?.length) {
-      i18next.changeLanguage(storedLanguage)
       return
     }
-    i18next.changeLanguage('en')
   }, [appLanhuage, appListMode])
 
   useEffect(() => {

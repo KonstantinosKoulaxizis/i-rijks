@@ -1,6 +1,6 @@
 import Request from './Request'
 import { QuerieUtils } from './QuerieUtils'
-import { setCollectionList } from '../store/Actions/CollectionListReducers'
+import { setCollectionList } from '../store/Actions/CollectionListActions'
 import store from '../index'
 
 export const MuseumRequests = (() => {

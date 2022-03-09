@@ -2,7 +2,7 @@ import { APP_LANGUAGE, LIST_MODE } from '../Actions/ActionTypes'
 
 const initialState = {
   appLanguage: '',
-  darkMode: false,
+  appLoading: false,
   listMode: false
 }
 
@@ -13,7 +13,6 @@ const appReducer = (state = initialState, action: any) => {
         ...state,
         appLanguage: action.payload
       }
-
     case LIST_MODE:
       return {
         ...state,

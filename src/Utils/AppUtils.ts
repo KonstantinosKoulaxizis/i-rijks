@@ -1,6 +1,6 @@
 import localforage from 'localforage'
 import ColectionTileModel from '../Models/ColectionTileModel'
-import { setFavoritesList } from '../store/Actions/CollectionListReducers'
+import { setFavoritesList } from '../store/Actions/CollectionListActions'
 import { FAVORITE_COLLECTIONS, ADD_TO_FORAGE, REMOVE_FROM_FORAGE } from '../Consts/AppConsts'
 import store from '../index'
 

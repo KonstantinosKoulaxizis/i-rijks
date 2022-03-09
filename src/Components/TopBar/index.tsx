@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
 import { useReduxDispatch, useReduxSelector } from '../../Hooks/ReduxHooks'
-import i18next from 'i18next'
 
 import { setAppLanguage } from '../../store/Actions/AppActions'
 import { LANGUAGE } from '../../Consts/AppConsts'
@@ -18,7 +17,6 @@ const TopBar = () => {
 
     AppUtils.setValueLocalStorage(LANGUAGE, event.target.value)
     setLanguage(event.target.value)
-    i18next.changeLanguage(event.target.value)
   }
 
   return (
