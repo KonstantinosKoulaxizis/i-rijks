@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ClipLoader from 'react-spinners/ClipLoader'
+
 import { MuseumRequests } from '../../Utils/MuseumRequests'
 import CollectionDetailsModel from '../../Models/CollectionDetailsModel'
 import AddToFavorites from '../../Components/AddToFavorites'
@@ -27,7 +29,7 @@ const CollectionView = () => {
   }, [handleGetCollection])
   return (
     <div id="collection-view">
-      {isLoaded && (
+      {isLoaded ? (
         <div id="collection-wrapper">
           <div id="collection-details" className="card-background shadows-light">
             <AddToFavorites
@@ -49,13 +51,13 @@ const CollectionView = () => {
 
           <div id="collection-info" className="card-background shadows-light">
             <div id="year-info">
-              <h4>year</h4>
+              <h4>Year</h4>
               <h5>{loadedCollection!.dating.presentingDate}</h5>
             </div>
 
             <hr />
             <div>
-              <h4>used_colors</h4>
+              <h4>Used colors</h4>
               {loadedCollection!.colors.map((color, index) => (
                 <div key={index} className="color-info">
                   <div className="round-dot" style={{ backgroundColor: `${color.hex}` }} />
@@ -65,7 +67,7 @@ const CollectionView = () => {
             </div>
             <hr />
             <div id="materials-ifo">
-              <h4>used_materials</h4>
+              <h4>Used materials</h4>
               {loadedCollection!.materials.map((material, index) => (
                 <h5 key={index}>{material}</h5>
               ))}
@@ -73,6 +75,8 @@ const CollectionView = () => {
             <hr />
           </div>
         </div>
+      ) : (
+        <ClipLoader color="#f0f0f0" />
       )}
     </div>
   )
