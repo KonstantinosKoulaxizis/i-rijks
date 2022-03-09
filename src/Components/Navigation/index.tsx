@@ -11,7 +11,7 @@ const Navigation: FunctionComponent = ({ children }) => {
   return (
     <div id='navigation-wrapper'>
       <div id='side-bar'>{location?.pathname !== '/' && <SideNav />}</div>
-      <div id='navigation-view'>{children}</div>
+      <div id='navigation-view' className={location?.pathname === '/' ? 'full-width' : ''}>{children}</div>
       {location?.pathname !== '/' && (
         <div id='navigation-footer'>
           <button>change</button>

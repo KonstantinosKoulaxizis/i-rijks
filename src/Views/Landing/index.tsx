@@ -9,8 +9,11 @@ const Landing = () => {
     navigate('/list')
   }
   return (
-    <div>
-      <button onClick={handleNavigateToList}>Go to list</button>
+    <div id="landing-view">
+      <div id="landing_message">
+        <h3>browse through Rijksmuseum's collection and create your own favorite list </h3>
+        <button onClick={handleNavigateToList}>Go to collections</button>
+      </div>
     </div>
   )
 }
