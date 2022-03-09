@@ -8,7 +8,6 @@ import reportWebVitals from './reportWebVitals'
 import { store } from './store/ConfigureStore'
 
 import './index.css'
-import './i18n'
 
 
 ReactDOM.render(

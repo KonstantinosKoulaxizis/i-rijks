@@ -27,13 +27,12 @@ const SideNav = () => {
   const MaterialUsedValue: string = useReduxSelector(state => state.searchOptions.materialUsed)
   const datingPeriodValue: string = useReduxSelector(state => state.searchOptions.datingPeriod)
   const sortByValue: string = useReduxSelector(state => state.searchOptions.sortBy)
-  console.log('🚀 ~ file: SideNav.tsx ~ line 29 ~ SideNav ~ sortByValue', sortByValue)
 
   const advancedSearchFields = [
-    { label: 'involved_maker', value: involvedMakerValue, action: setMaker, type: 'text' },
-    { label: 'material_used', value: MaterialUsedValue, action: setMaterial, type: 'text' },
+    { label: 'Involved maker', value: involvedMakerValue, action: setMaker, type: 'text' },
+    { label: 'Material used', value: MaterialUsedValue, action: setMaterial, type: 'text' },
     {
-      label: 'dating_period',
+      label: 'Dating period',
       value: datingPeriodValue,
       action: setPeriod,
       type: 'number',
@@ -43,16 +42,16 @@ const SideNav = () => {
   ]
 
   const navigationButtons = [
-    { label: 'list', path: '/list' },
-    { label: 'favorites', path: '/favorites' }
+    { label: 'List', path: '/list' },
+    { label: 'Favorites', path: '/favorites' }
   ]
 
   const sortOptions = [
-    { label: 'default', value: 'default' },
-    { label: 'achronologic', value: 'achronologic' },
-    { label: 'chronologic', value: 'chronologic' },
-    { label: 'artist', value: 'artist' },
-    { label: 'artistdesc', value: 'artistdesc' }
+    { label: 'Default', value: 'default' },
+    { label: 'Achronologic', value: 'achronologic' },
+    { label: 'Chronologic', value: 'chronologic' },
+    { label: 'Artist (A-Z)', value: 'artist' },
+    { label: 'Artist desc (Z-A)', value: 'artistdesc' }
   ]
 
   const handleChangeSortBy = async (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -73,7 +72,7 @@ const SideNav = () => {
         </button>
       ))}
       <div className={location?.pathname === '/list' ? 'visible_class' : 'hidden_class'}>
-        <h4>advanced_search</h4>
+        <h4>Advanced search</h4>
         <div id="advanced-search-wrapper">
           {advancedSearchFields.map(field => (
             <div key={field.label} className="advanced-search-fields">
@@ -88,7 +87,7 @@ const SideNav = () => {
             </div>
           ))}
           <div className="advanced-search-fields">
-            <label>sort_results</label>
+            <label>Sort results</label>
             <select value={sortByValue || 'default'} onChange={handleChangeSortBy}>
               {sortOptions.map(opt => (
                 <option key={opt.value} value={opt.value}>

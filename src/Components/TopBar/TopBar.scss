@@ -22,6 +22,14 @@
       width: 150px;
       justify-content: space-evenly;
     }
+
+    select {
+      padding: 6px;
+      border-color: #fff;
+    }
+    select:focus {
+      border: 2px solid #318ed5 !important;
+    }
   }
   
   
