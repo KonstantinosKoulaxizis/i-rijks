@@ -32,13 +32,6 @@
       button:hover {
         box-shadow: 4px 4px 4px 0 rgba(59, 121, 165, 0.2), -2px -2px 2px 0 rgba(135, 197, 242, 0.5);
       }
-
-      .active-link {
-        text-shadow: 2px 2px 4px #1b95f2;
-        box-shadow: inset 2px 2px 2px 0 rgba(59, 121, 165, 0.2),
-          inset -2px -2px 2px 0 rgba(135, 197, 242, 0.5);
-        color: #318ed5;
-      }
     }
 
     .advanced-search-fields {
@@ -77,6 +70,19 @@
     width: 100%;
     padding: 10px 0;
     opacity: 0;
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      flex: 1;
+      margin: 0;
+      background-color: transparent;
+      padding: 5px 0;
+      color:  #28608a;
+    }
+
+    button:hover {
+      box-shadow: 4px 4px 4px 0 rgba(59, 121, 165, 0.2), -2px -2px 2px 0 rgba(135, 197, 242, 0.5);
+    }
   }
 
   #navigation-view {
@@ -94,6 +100,13 @@
   .full-width {
     width: 100% !important;
   }
+}
+
+.active-link {
+  text-shadow: 2px 2px 4px #1b95f2;
+  box-shadow: inset 2px 2px 2px 0 rgba(59, 121, 165, 0.2),
+    inset -2px -2px 2px 0 rgba(135, 197, 242, 0.5);
+  color: #318ed5;
 }
 
 @media only screen and (max-width: 700px) {

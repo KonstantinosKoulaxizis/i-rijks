@@ -5,6 +5,7 @@ import ClipLoader from 'react-spinners/ClipLoader'
 import { MuseumRequests } from '../../Utils/MuseumRequests'
 import { useReduxSelector } from '../../Hooks/ReduxHooks'
 import SideNav from './SideNav'
+import BottomNavigation from './BottomNavigation'
 
 import './Navigation.scss'
 
@@ -36,12 +37,7 @@ const Navigation: FunctionComponent = ({ children }) => {
         {children}
         {isLoading && <ClipLoader color="#f0f0f0" />}
       </div>
-      {location?.pathname !== '/' && (
-        <div id="navigation-footer">
-          <button>change</button>
-          <button>open_menu</button>
-        </div>
-      )}
+      {location?.pathname !== '/' && <BottomNavigation />}
     </div>
   )
 }
