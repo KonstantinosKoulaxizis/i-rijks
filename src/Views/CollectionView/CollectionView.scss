@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 10px;
-    // flex-direction: column;
     #collection-details {
       max-width: 550px;
 
@@ -33,11 +32,9 @@
   .color-info {
     display: flex;
     width: 95%;
-    // gap: 10px;
     justify-content: space-between;
     align-content: center;
     align-items: baseline;
-    // padding: 0 5px;
     text-align: right !important;
     .round-dot {
       height: 20px !important;

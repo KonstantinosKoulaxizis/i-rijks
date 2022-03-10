@@ -27,7 +27,6 @@ const InputComponent: FunctionComponent<InputFieldModel> = ({
 
   useEffect(() => {
     MuseumRequests.getMuseumCollection()
-    // set search page to 1
   }, [debouncedStoreData])
 
   return (

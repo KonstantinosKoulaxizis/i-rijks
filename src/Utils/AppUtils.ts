@@ -54,7 +54,6 @@ const AppUtils = (() => {
       const shortByValue = store?.getState()?.searchOptions?.sortBy
       const currentPageValue = store?.getState()?.collectionList?.listPage
 
-      //add search value to query
       if (!!searchValue?.length) {
         result = result + `&q=${searchValue.replace(/\s/g, '+')}`
       }

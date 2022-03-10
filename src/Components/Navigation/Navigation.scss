@@ -30,7 +30,6 @@
         font-weight: bold;
       }
       button:hover {
-        // background: linear-gradient(-45deg, rgba(59, 85, 41, 0.2), rgba(69, 248, 84, 0.5));
         box-shadow: 4px 4px 4px 0 rgba(59, 121, 165, 0.2), -2px -2px 2px 0 rgba(135, 197, 242, 0.5);
       }
 
@@ -43,7 +42,6 @@
     }
 
     .advanced-search-fields {
-      // margin-top: -10px;
       display: flex;
       gap: 0px;
       align-content: center;
@@ -91,8 +89,6 @@
     padding: 15px;
     z-index: 100;
     background-color: #282c34;
-    // overflow: hidden;
-    // border-top-left-radius: 5px;
   }
 
   .full-width {

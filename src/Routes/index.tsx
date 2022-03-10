@@ -1,6 +1,5 @@
 import { Routes, Route, Outlet } from 'react-router-dom'
 
-// import { PrivateRoute } from './PrivateRoute'
 import TopBar from '../Components/TopBar'
 import Navigation from '../Components/Navigation'
 import Landing from '../Views/Landing'
